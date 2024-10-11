@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambiar Imagen RGB</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <h1>Cambiar Imagen con un Botón RGB</h1>
+
+    <!-- Las 4 imágenes -->
+    <img id="imagen1" class="active" src="imagen1.png" alt="Imagen 1">
+    <img id="imagen2" src="imagen2.avif" alt="Imagen 2">
+    <img id="imagen3" src="imagen3.jpg" alt="Imagen 3">
+    <img id="imagen4" src="imagen4.jpg" alt="Imagen 4">
+
+    <!-- Botón para cambiar imágenes -->
+    <button id="boton-cambiar">Cambiar Imagen</button>
+
+    <script>
+        // Obtener todas las imágenes
+        const imagenes = [
+            document.getElementById('imagen1'),
+            document.getElementById('imagen2'),
+            document.getElementById('imagen3'),
+            document.getElementById('imagen4')
+        ];
+
+        let imagenActual = 0; // Índice de la imagen actualmente mostrada
+
+        // Obtener el botón
+        const boton = document.getElementById('boton-cambiar');
+
+        // Cambiar la imagen al hacer clic en el botón
+        boton.addEventListener('click', () => {
+            // Ocultar la imagen actual
+            imagenes[imagenActual].classList.remove('active');
+
+            // Cambiar al siguiente índice (si llega al final, volver al inicio)
+            imagenActual = (imagenActual + 1) % imagenes.length;
+
+            // Mostrar la nueva imagen
+            imagenes[imagenActual].classList.add('active');
+        });
+    </script>
+</body>
+
+</html>

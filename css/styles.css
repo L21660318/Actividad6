@@ -1,0 +1,90 @@
+ /* Estilo general del cuerpo con fondo animado en degradado RGB */
+ body {
+     font-family: 'Poppins', sans-serif;
+     text-align: center;
+     margin: 0;
+     background: linear-gradient(45deg, #000dff, #ff00dc);
+     background-size: 200% 200%;
+     animation: gradientBG 10s ease infinite;
+     height: 100vh;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+     transition: all 0.5s ease;
+     color: #ffffff;
+ }
+
+ /* Animación del fondo */
+ @keyframes gradientBG {
+     0% {
+         background-position: 0% 50%;
+     }
+
+     50% {
+         background-position: 100% 50%;
+     }
+
+     100% {
+         background-position: 0% 50%;
+     }
+ }
+
+ /* Estilo para el título */
+ h1 {
+     font-size: 36px;
+     color: #ffffff;
+     margin-bottom: 30px;
+     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+     font-weight: bold;
+ }
+
+ /* Estilo de las imágenes */
+ img {
+     width: 320px;
+     height: auto;
+     border-radius: 15px;
+     border: 5px solid #530202;
+     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+     transition: transform 0.4s ease, box-shadow 0.4s ease;
+     display: none;
+ }
+
+ img.active {
+     display: block;
+     /* Mostrar solo la imagen activa */
+ }
+
+ img:hover {
+     transform: scale(1.08);
+     box-shadow: 0 12px 30px rgba(255, 255, 255, 0.6);
+     /* Luz más intensa al pasar el cursor */
+ }
+
+ /* Estilo del botón */
+ button {
+     background: linear-gradient(45deg, #1c1b1b, #292929);
+     color: #fff;
+     border: none;
+     padding: 15px 35px;
+     margin-top: 30px;
+     font-size: 20px;
+     font-weight: bold;
+     border-radius: 50px;
+     cursor: pointer;
+     transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+     /* Sombra suave */
+ }
+
+ button:hover {
+     background: linear-gradient(45deg, #ff7f50, #ff4500);
+     box-shadow: 0 15px 25px rgba(255, 105, 135, 0.7);
+     /* Sombra intensa */
+     transform: scale(1.08);
+ }
+
+ button:active {
+     transform: scale(0.98);
+     box-shadow: 0 5px 15px rgba(255, 105, 135, 0.5);
+ }
